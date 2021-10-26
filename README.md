@@ -1,31 +1,33 @@
-# curriculum-databases-projects-template
+# Vet Animals Database
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+> This project used the relational database to create the data structure for a vet clinic. Apart from the building data structure, here will be challenged with tasks that require SQL queries to answer specific questions.
+
+## Tasks todo:
+
+- Create animals table.
+- Query and update animals table.
+- Query multiple tables.
+- Add "join table" for visits.
+- Database performance audit.
+- Add database schema diagram.
 
 
 ## Getting Started
 
-This repository includes files with plain SQL that can be used to recreate a database:
+### Setup
+- git clone https://github.com/elmar8287/vet_animals.git
+- cd ./vet_animals
 
-- Use [schema.sql](./schema.sql) to create all tables.
-- Use [data.sql](./data.sql) to populate tables with sample data.
-- Check [queries.sql](./queries.sql) for examples of queries that can be run on a newly created database. **Important note: this file might include queries that make changes in the database (e.g., remove records). Use them responsibly!**
+This repository includes SQL files for creation of a database:
 
+- [schema.sql](./schema.sql) to create all tables.
+- [data.sql](./data.sql) to populate tables with data.
+- [queries.sql](./queries.sql) list of queries
+## Author
 
-## Authors
+👤 **Elmar Abdulkarimov**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [Elmar Abdulkarimov](https://github.com/elmar8287)
 
 ## 🤝 Contributing
 
