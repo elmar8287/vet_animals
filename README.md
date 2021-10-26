@@ -11,6 +11,10 @@
 - Database performance audit.
 - Add database schema diagram.
 
+## Built using:
+
+- SQL
+- SQL Shell (psql)
 
 ## Getting Started
 
