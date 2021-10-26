@@ -5,7 +5,7 @@
 ## Tasks todo:
 
 - Create animals table.
-- Query and update animals table.
+- Query and update animals table.  ​🚩​🚩​🚩 (current milestone)
 - Query multiple tables.
 - Add "join table" for visits.
 - Database performance audit.
@@ -13,7 +13,7 @@
 
 # THIS IS "Query and update animals table" MILESTONE
 
-![Animal table screenshot](./img/animals_table.PNG)
+![Animal table screenshot](./img/query-update.PNG)
 
 ## Built using:
 
