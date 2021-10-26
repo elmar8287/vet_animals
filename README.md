@@ -11,6 +11,14 @@
 - Database performance audit.
 - Add database schema diagram.
 
+# THIS IS "Create animals table" MILESTONE
+
+![Animal table screenshot](./img/animals_table.PNG)
+
+## Built using:
+
+- SQL
+- SQL Shell (psql)
 
 ## Getting Started
 
