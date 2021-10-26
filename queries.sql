@@ -1,3 +1,2 @@
-/*Queries that provide answers to the questions from all projects.*/
-
-SELECT * from animals WHERE name = 'Luna';
+SELECT * from animals WHERE animal_name like '%mon';
+SELECT date_of_birth FROM animals BETWEEN '2016.01.01' AND '2019.12.31';
