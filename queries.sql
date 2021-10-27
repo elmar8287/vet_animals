@@ -45,3 +45,7 @@ SELECT FROM animals WHERE escape_attempts = 0;
 SELECT AVG(weight_kg) FROM animals;
 SELECT COUNT(escape_attempts) FROM animals WHERE neutered='1';
 SELECT COUNT(escape_attempts) FROM animals WHERE neutered='0';
+SELECT MIN(weight_kg) FROM animals WHERE species='digimon';
+SELECT MAX(weight_kg) FROM animals WHERE species='digimon';
+SELECT MIN(weight_kg) FROM animals WHERE species='pokemon';
+SELECT MAX(weight_kg) FROM animals WHERE species='pokemon';
