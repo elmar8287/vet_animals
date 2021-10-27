@@ -6,11 +6,3 @@ CREATE TABLE animals (
 	neutered BIT,
 	weight_kg DECIMAL
 );
-
-ALTER TABLE animals
-ADD species VARCHAR(250);
-
-BEGIN;
-UPDATE animals
-SET species='unspecified';
-ROLLBACK;
