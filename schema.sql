@@ -13,4 +13,4 @@ ADD species VARCHAR(250);
 BEGIN;
 UPDATE animals
 SET species='unspecified';
-COMMIT;
+ROLLBACK;
