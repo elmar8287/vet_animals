@@ -9,3 +9,8 @@ CREATE TABLE animals (
 
 ALTER TABLE animals
 ADD species VARCHAR(250);
+
+BEGIN;
+UPDATE animals
+SET species='unspecified';
+COMMIT;
