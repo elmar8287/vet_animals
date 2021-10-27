@@ -41,3 +41,4 @@ WHERE weight_kg < 0;
 COMMIT;
 
 SELECT FROM animals;
+SELECT FROM animals WHERE escape_attempts = 0;
