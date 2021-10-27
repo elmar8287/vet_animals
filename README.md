@@ -11,10 +11,6 @@
 - Database performance audit.
 - Add database schema diagram.
 
-# THIS IS "Query and update animals table" MILESTONE
-
-![Animal table screenshot](./img/query-update.PNG)
-
 ## Built using:
 
 - SQL
