@@ -51,3 +51,18 @@ SELECT MIN(weight_kg) FROM animals WHERE species='pokemon';
 SELECT MAX(weight_kg) FROM animals WHERE species='pokemon';
 SELECT AVG(escape_attempts) FROM animals WHERE (species='digimon') AND(date_of_birth BETWEEN '1990.01.01' AND '2000.12.31');
 SELECT AVG(escape_attempts) FROM animals WHERE (species='pokemon') AND(date_of_birth BETWEEN '1990.01.01' AND '2000.12.31');
+
+BEGIN;
+ALTER TABLE animals
+DROP COLUMN species;
+ALTER TABLE animals
+ADD species_id INT,
+CONSTRAINT fk_species
+      FOREIGN KEY(species_id) 
+	  REFERENCES species(species_id);
+ALTER TABLE animals
+ADD owner_id INT,
+CONSTRAINT fk_owners
+      FOREIGN KEY(owners_id) 
+	  REFERENCES owners(owners_id);
+SAVEPOINT ADD_DELETE_COLUMNS;
