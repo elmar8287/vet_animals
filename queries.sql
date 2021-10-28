@@ -74,3 +74,7 @@ WHERE species.species_name = 'Digimon' AND animals.owners_id = 2;
 
 SELECT animal_name FROM animals
 WHERE owners_id = 5 AND escape_attempts = 0;
+
+SELECT owners.full_name, COUNT(animals.animal_name) FROM animals
+JOIN owners ON animals.owners_id = owners.owner_id
+GROUP BY owners.owner_name;
