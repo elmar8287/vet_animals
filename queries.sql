@@ -52,3 +52,6 @@ SELECT MAX(weight_kg) FROM animals WHERE species='pokemon';
 SELECT AVG(escape_attempts) FROM animals WHERE (species='digimon') AND(date_of_birth BETWEEN '1990.01.01' AND '2000.12.31');
 SELECT AVG(escape_attempts) FROM animals WHERE (species='pokemon') AND(date_of_birth BETWEEN '1990.01.01' AND '2000.12.31');
 
+SELECT animal_name FROM animals
+JOIN owners ON animals.owners_id = owners.owners_id
+WHERE owners.full_name = 'Melody Pond';
