@@ -63,3 +63,7 @@ WHERE species.species_name = 'Pokemon';
 SELECT owners.full_name, animals.animal_name FROM animals
 LEFT JOIN owners ON animals.owners_id = owners.owners_id;
 WHERE animals.owners_id IS NOT NULL AND (animals.owners_id IS NULL);
+
+SELECT species.species_name, COUNT(animals.animal_name) FROM animals
+JOIN species ON animals.species_id = species.species_id
+GROUP BY species.species_name;
