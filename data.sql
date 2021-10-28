@@ -43,4 +43,28 @@ SET species_ID = 1
 WHERE animal_name like '%mon';
 UPDATE animals
 SET species_ID = 2
-WHERE species_ID = 0;
+WHERE species_ID IS NULL;
+UPDATE animals
+SET owners_ID = 1
+WHERE animal_name = 'Agumon';
+UPDATE animals
+SET owners_ID = 2
+WHERE animal_name = 'Pikachu';
+UPDATE animals
+SET owners_ID = 3
+WHERE animal_name = 'Plantmon';
+UPDATE animals
+SET owners_ID = 4
+WHERE animal_name = 'Charmander';
+UPDATE animals
+SET owners_ID = 4
+WHERE animal_name = 'Squirtle';
+UPDATE animals
+SET owners_ID = 4
+WHERE animal_name = 'Blossom';
+UPDATE animals
+SET owners_ID = 5
+WHERE animal_name = 'Angemon';
+UPDATE animals
+SET owners_ID = 5
+WHERE animal_name = 'Boarmon';
