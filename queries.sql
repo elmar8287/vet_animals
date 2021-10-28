@@ -71,3 +71,6 @@ GROUP BY species.species_name;
 SELECT animals.animal_name FROM animals
 JOIN species ON animals.species_id = species.species_id
 WHERE species.species_name = 'Digimon' AND animals.owners_id = 2;
+
+SELECT animal_name FROM animals
+WHERE owners_id = 5 AND escape_attempts = 0;
