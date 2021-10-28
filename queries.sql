@@ -55,3 +55,7 @@ SELECT AVG(escape_attempts) FROM animals WHERE (species='pokemon') AND(date_of_b
 SELECT animal_name FROM animals
 JOIN owners ON animals.owners_id = owners.owners_id
 WHERE owners.full_name = 'Melody Pond';
+
+SELECT animal_name FROM animals
+JOIN species ON animals.species_id = species.species_id
+WHERE species.species_name = 'Pokemon';
