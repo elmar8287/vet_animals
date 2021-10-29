@@ -30,7 +30,7 @@ CREATE TABLE vets (
 );
 
 CREATE TABLE specializations (
-  vspecializations_id BIGSERIAL PRIMARY KEY,
+  specializations_id BIGSERIAL PRIMARY KEY,
   species_id INT,
   vets_id INT,
   FOREIGN KEY(species_id) REFERENCES species(species_id),
