@@ -100,6 +100,14 @@ SELECT visits.vets_id, visits.animals_id, MIN(visits.visit_date) FROM visits
 WHERE  visits.vets_id = 2
 GROUP BY visits.vets_id, visits.animals_id;
 
-SELECT animals.animal_name, visit_date FROM visits
+SELECT animals.animal_name animals, vets.vets_name vets, visit_date FROM visits
 JOIN animals ON visits.animals_id = animals.id
-GROUP BY animals.animal_name, visit_date;
+JOIN vets ON visits.vets_id = vets.vets_id
+GROUP BY animals, vets, visit_date;
+
+SELECT species.species_name, COUNT(visits.animals_id) FROM visits
+JOIN animals ON visits.animals_id = animals.id
+JOIN species ON animals.species_id = species.species_id
+JOIN vets ON visits.vets_id = vets.vets_id
+WHERE vets.vets_name = 'Maisy Smith'
+GROUP BY species.species_name;
