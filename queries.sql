@@ -96,3 +96,6 @@ SELECT * FROM specializations
 SELECT visits.vets_id, visits.animals_id FROM visits
 WHERE  visits.vets_id = 3 AND (visits.visit_date BETWEEN '2020.04.01' AND '2020.08.30')
 GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT visits.vets_id, visits.animals_id, COUNT(visits.animals_id) total_visits FROM visits
+GROUP BY visits.animals_id, visits.vets_id;
