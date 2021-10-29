@@ -79,10 +79,6 @@ SELECT owners.full_name, COUNT(animals.animal_name) FROM animals
 JOIN owners ON animals.owners_id = owners.owners_id
 GROUP BY owners.full_name;
 
-SELECT vets.vets_name, animals.animal_name, MAX(visits.visit_date) FROM vets, visits, animals
-WHERE vets.vets_name = 'Stephanie Mendez'
-GROUP BY animals.animal_name, vets.vets_name;
-
 SELECT visits.vets_id, visits.animals_id, MAX(visits.visit_date) FROM visits
 WHERE  visits.vets_id = 1
 GROUP BY visits.vets_id, visits.animals_id;
@@ -97,5 +93,9 @@ SELECT visits.vets_id, visits.animals_id FROM visits
 WHERE  visits.vets_id = 3 AND (visits.visit_date BETWEEN '2020.04.01' AND '2020.08.30')
 GROUP BY visits.vets_id, visits.animals_id;
 
-SELECT visits.vets_id, visits.animals_id, COUNT(visits.animals_id) total_visits FROM visits
-GROUP BY visits.animals_id, visits.vets_id;
+SELECT visits.animals_id, COUNT(visits.vets_id) total_visits FROM visits
+GROUP BY visits.animals_id;
+
+SELECT visits.vets_id, visits.animals_id, MIN(visits.visit_date) FROM visits
+WHERE  visits.vets_id = 2
+GROUP BY visits.vets_id, visits.animals_id;
