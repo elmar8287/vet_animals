@@ -21,3 +21,10 @@ CREATE TABLE species (
   species_id BIGSERIAL PRIMARY KEY,
   species_name VARCHAR(150)
 );
+
+CREATE TABLE vets (
+  vets_id BIGSERIAL PRIMARY KEY,
+  vets_name VARCHAR(150),
+  age INT,
+  date_of_graduation DATE
+);
