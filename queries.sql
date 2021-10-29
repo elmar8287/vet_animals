@@ -99,3 +99,7 @@ GROUP BY visits.animals_id;
 SELECT visits.vets_id, visits.animals_id, MIN(visits.visit_date) FROM visits
 WHERE  visits.vets_id = 2
 GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT animals.animal_name, visit_date FROM visits
+JOIN animals ON visits.animals_id = animals.id
+GROUP BY animals.animal_name, visit_date;
