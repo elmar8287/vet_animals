@@ -37,3 +37,11 @@ CREATE TABLE specializations (
   FOREIGN KEY(vets_id) REFERENCES vets(vets_id)
 );
 
+CREATE TABLE visits (
+  visits_id BIGSERIAL PRIMARY KEY,
+  animals_id INT,
+  vets_id INT,
+  FOREIGN KEY(animals_id) REFERENCES animals(id),
+  FOREIGN KEY(vets_id) REFERENCES vets(vets_id)
+);
+
