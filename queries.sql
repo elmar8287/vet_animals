@@ -79,5 +79,14 @@ SELECT owners.full_name, COUNT(animals.animal_name) FROM animals
 JOIN owners ON animals.owners_id = owners.owners_id
 GROUP BY owners.full_name;
 
-SELECT animals.animal_name, visits.animals_id, MAX(visits.visit_date) FROM visits, animals
-GROUP BY visits.animals_id;
+SELECT vets.vets_name, animals.animal_name, MAX(visits.visit_date) FROM vets, visits, animals
+WHERE vets.vets_name = 'Stephanie Mendez'
+GROUP BY animals.animal_name, vets.vets_name;
+
+SELECT visits.vets_id, visits.animals_id, MAX(visits.visit_date) FROM visits
+WHERE  visits.vets_id = 1
+GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT DISTINCT visits.vets_id, visits.animals_id FROM visits
+WHERE  visits.vets_id = 3
+GROUP BY visits.vets_id, visits.animals_id;
