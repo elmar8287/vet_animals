@@ -111,3 +111,9 @@ JOIN species ON animals.species_id = species.species_id
 JOIN vets ON visits.vets_id = vets.vets_id
 WHERE vets.vets_name = 'Maisy Smith'
 GROUP BY species.species_name;
+
+SELECT vets.vets_name, COUNT(visits.animals_id) FROM visits
+JOIN vets ON visits.vets_id = vets.vets_id
+JOIN animals ON visits.animals_id = animals.id
+JOIN species ON animals.species_id = species.species_id
+GROUP BY vets.vets_name;
