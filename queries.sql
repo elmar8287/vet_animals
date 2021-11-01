@@ -51,3 +51,69 @@ SELECT MIN(weight_kg) FROM animals WHERE species='pokemon';
 SELECT MAX(weight_kg) FROM animals WHERE species='pokemon';
 SELECT AVG(escape_attempts) FROM animals WHERE (species='digimon') AND(date_of_birth BETWEEN '1990.01.01' AND '2000.12.31');
 SELECT AVG(escape_attempts) FROM animals WHERE (species='pokemon') AND(date_of_birth BETWEEN '1990.01.01' AND '2000.12.31');
+
+SELECT animal_name FROM animals
+JOIN owners ON animals.owners_id = owners.owners_id
+WHERE owners.full_name = 'Melody Pond';
+
+SELECT animal_name FROM animals
+JOIN species ON animals.species_id = species.species_id
+WHERE species.species_name = 'Pokemon';
+
+SELECT owners.full_name, animals.animal_name FROM animals
+LEFT JOIN owners ON animals.owners_id = owners.owners_id;
+WHERE animals.owners_id IS NOT NULL AND (animals.owners_id IS NULL);
+
+SELECT species.species_name, COUNT(animals.animal_name) FROM animals
+JOIN species ON animals.species_id = species.species_id
+GROUP BY species.species_name;
+
+SELECT animals.animal_name FROM animals
+JOIN species ON animals.species_id = species.species_id
+WHERE species.species_name = 'Digimon' AND animals.owners_id = 2;
+
+SELECT animal_name FROM animals
+WHERE owners_id = 5 AND escape_attempts = 0;
+
+SELECT owners.full_name, COUNT(animals.animal_name) FROM animals
+JOIN owners ON animals.owners_id = owners.owners_id
+GROUP BY owners.full_name;
+
+SELECT visits.vets_id, visits.animals_id, MAX(visits.visit_date) FROM visits
+WHERE  visits.vets_id = 1
+GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT DISTINCT visits.vets_id, visits.animals_id FROM visits
+WHERE  visits.vets_id = 3
+GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT * FROM specializations
+
+SELECT visits.vets_id, visits.animals_id FROM visits
+WHERE  visits.vets_id = 3 AND (visits.visit_date BETWEEN '2020.04.01' AND '2020.08.30')
+GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT visits.animals_id, COUNT(visits.vets_id) total_visits FROM visits
+GROUP BY visits.animals_id;
+
+SELECT visits.vets_id, visits.animals_id, MIN(visits.visit_date) FROM visits
+WHERE  visits.vets_id = 2
+GROUP BY visits.vets_id, visits.animals_id;
+
+SELECT animals.animal_name animals, vets.vets_name vets, visit_date FROM visits
+JOIN animals ON visits.animals_id = animals.id
+JOIN vets ON visits.vets_id = vets.vets_id
+GROUP BY animals, vets, visit_date;
+
+SELECT species.species_name, COUNT(visits.animals_id) FROM visits
+JOIN animals ON visits.animals_id = animals.id
+JOIN species ON animals.species_id = species.species_id
+JOIN vets ON visits.vets_id = vets.vets_id
+WHERE vets.vets_name = 'Maisy Smith'
+GROUP BY species.species_name;
+
+SELECT vets.vets_name, COUNT(visits.animals_id) FROM visits
+JOIN vets ON visits.vets_id = vets.vets_id
+JOIN animals ON visits.animals_id = animals.id
+JOIN species ON animals.species_id = species.species_id
+GROUP BY vets.vets_name;
